@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Team C00lkidd 4</title>
+  <style>
+    body {
+      background-color: red;
+    }
+
+    h1 {
+      color: purple;
+      animation: rainbowText 5s infinite;
+    }
+
+    @keyframes rainbowText {
+      0% { color: purple; }
+      14% { color: blue; }
+      28% { color: green; }
+      42% { color: yellow; }
+      57% { color: orange; }
+      71% { color: red; }
+      85% { color: pink; }
+      100% { color: purple; }
+    }
+
+    .login-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .input-field {
+      margin-bottom: 10px;
+    }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .error-message {
+      color: red;
+      animation: shake 0.5s infinite;
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-10px); }
+      40% { transform: translateX(10px); }
+      60% { transform: translateX(-10px); }
+      80% { transform: translateX(10px); }
+      100% { transform: translateX(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Welcome to Team C00lkidd 4 website!</h1>
+    <div class="login-form">
+      <div class="input-field">
+        <label for="username">Username:</label>
+        <input type="text" id="username" />
+      </div>
+      <div class="input-field">
+        <label for="password">Password:</label>
+        <input type="password" id="password" />
+      </div>
+      <button class="button" onclick="checkCredentials()">Login</button>
+      <p id="error-message" class="error-message"></p>
+    </div>
+  </div>
+
+  <script>
+    function checkCredentials() {
+      var usernameInput = document.getElementById('username').value;
+      var passwordInput = document.getElementById('password').value;
+      var errorMessage = document.getElementById('error-message');
+
+      if (usernameInput === 'ck4' && passwordInput === 'ck4') {
+        document.body.style.backgroundColor = 'red';
+        document.querySelector('h1').textContent = 'Welcome to Team C00lkidd 4 website!';
+        errorMessage.textContent = '';
+      } else {
+        errorMessage.textContent = 'Incorrect username or password';
+      }
+    }
+  </script>
+</body>
+</html>
